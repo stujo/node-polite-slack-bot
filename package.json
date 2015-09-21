@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/stujo/node-polite-slack-bot/issues"
   },
-  "homepage": "https://github.com/stujo/node-polite-slack-bot"
+  "homepage": "https://github.com/stujo/node-polite-slack-bot",
+  "dependencies": {
+    "dotenv": "^1.2.0"
+  }
 }
