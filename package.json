@@ -4,6 +4,9 @@
   "description": "A polite bot for slack written in node",
   "main": "index.js",
   "scripts": {
+    "preinstall": "echo 'Heroku install starting'",
+    "postinstall": "echo 'Heroku install complete'",
+    "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
@@ -24,3 +27,5 @@
     "dotenv": "^1.2.0"
   }
 }
+
+  
