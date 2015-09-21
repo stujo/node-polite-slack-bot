@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/stujo/node-polite-slack-bot",
   "dependencies": {
-    "dotenv": "^1.2.0"
+    "body-parser": "^1.14.0",
+    "dotenv": "^1.2.0",
+    "express": "^4.13.3"
   }
 }
-
-  
