@@ -1,0 +1,23 @@
+{
+  "name": "node-polite-slack-bot",
+  "version": "1.0.0",
+  "description": "A polite bot for slack written in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stujo/node-polite-slack-bot"
+  },
+  "keywords": [
+    "node.js",
+    "slack"
+  ],
+  "author": "stujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stujo/node-polite-slack-bot/issues"
+  },
+  "homepage": "https://github.com/stujo/node-polite-slack-bot"
+}
