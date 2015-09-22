@@ -12,8 +12,17 @@ var session      = require('express-session');
 
 mongoose.connect(process.env.MONGODB_URL);
 
+
 // required for passport
-app.use(session({ secret: process.env.SESSION_SECRET })); // session secret
+app.use(
+  session( 
+    {
+      resave: true,
+      saveUninitialized: true,
+      secret: process.env.SESSION_SECRET // session secret
+    }
+  )
+); 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(cookieParser()); // read cookies (needed for auth)
@@ -31,9 +40,9 @@ app.get('/', function(req, res) {
     res.end('HOME');
 });
 
-app.use('/auth', require('./routes/passport')(express,app,passport));
+require('./routes/passport')('/auth', express, app, passport);
 
-app.use('/slack', require('./routes/slack-incoming')(express));
+require('./routes/slack-incoming')('/slack', express, app);
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
