@@ -18,33 +18,33 @@ module.exports = function(prefix, express, app, passport){
   });
 
 
-  // http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
-  function escapeRegExp(str) {
-    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-  }
+  // // http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+  // function escapeRegExp(str) {
+  //   return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  // }
 
-  var regex_exp = '^' + escapeRegExp(prefix) + '.*' ;
-  var prefix_regex = new RegExp(regex_exp);
+  // var regex_exp = '^' + escapeRegExp(prefix) + '.*' ;
+  // var prefix_regex = new RegExp(regex_exp);
 
 
-  // route middleware to make sure a user is logged in
-  function isLoggedIn(req, res, next) {
+  // // route middleware to make sure a user is logged in
+  // function isLoggedIn(req, res, next) {
 
-    if(req.url.match(prefix_regex)){
-      console.log('UNPROTECTED ROUTE', req.url);
-      return next();
-    }
-    console.log('PROTECTED ROUTE', req.url);
+  //   if(req.url.match(prefix_regex)){
+  //     console.log('UNPROTECTED ROUTE', req.url);
+  //     return next();
+  //   }
+  //   console.log('PROTECTED ROUTE', req.url);
 
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
+  //   // if user is authenticated in the session, carry on 
+  //   if (req.isAuthenticated())
+  //       return next();
 
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}
+  //   // if they aren't redirect them to the home page
+  //   res.redirect('/');
+  // }
 
-  app.use(isLoggedIn);
+  // app.use(isLoggedIn);
 
   app.use(prefix, router);
 
