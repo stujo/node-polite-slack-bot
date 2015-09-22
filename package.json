@@ -7,6 +7,7 @@
     "preinstall": "echo 'Heroku install starting'",
     "postinstall": "echo 'Heroku install complete'",
     "start": "node index.js",
+    "dev" : "nodemon index.js",
     "test": "mocha"
   },
   "repository": {
@@ -24,8 +25,14 @@
   },
   "homepage": "https://github.com/stujo/node-polite-slack-bot",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.0",
+    "cookie-parser": "^1.4.0",
     "dotenv": "^1.2.0",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.1.8",
+    "passport": "^0.3.0",
+    "passport-slack": "0.0.4"
   }
 }
