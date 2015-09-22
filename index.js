@@ -27,6 +27,10 @@ app.disable('x-powered-by');
 
 var port = process.env.PORT || 8080;        // set our port
 
+app.get('/', function(req, res) {
+    res.end('HOME');
+});
+
 app.use('/auth', require('./routes/passport')(express,app,passport));
 
 app.use('/slack', require('./routes/slack-incoming')(express));
