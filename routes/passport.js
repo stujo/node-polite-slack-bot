@@ -45,6 +45,7 @@ module.exports = function(prefix, express, app, passport){
   // }
 
   // app.use(isLoggedIn);
+  
 
   app.use(prefix, router);
 
