@@ -1,10 +1,16 @@
 // config/passport.js
 
+var passport = require('passport');
+var User     = require('../app/models/user');
+
 // load all the things we need
 //var LocalStrategy   = require('passport-local').Strategy;
 
 // expose this function to our app using module.exports
-module.exports = function(passport, app, User) {
+module.exports = function(app) {
+
+    app.use(passport.initialize());
+    app.use(passport.session()); // persistent login sessions
 
     // =========================================================================
     // passport session setup ==================================================

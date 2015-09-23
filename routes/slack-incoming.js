@@ -1,6 +1,4 @@
-module.exports = function(prefix, express, app){
-
-  var router = express.Router();              // get an instance of the express Router
+module.exports = function(prefix, app, router){
 
   router.get('/incoming', function(req, res) {
       res.type('json'); 
@@ -8,6 +6,4 @@ module.exports = function(prefix, express, app){
   });
 
   app.use(prefix, router);
-
-  return router;
 }
